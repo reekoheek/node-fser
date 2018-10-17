@@ -1,0 +1,22 @@
+{
+  "name": "fser",
+  "version": "0.1.0",
+  "description": "Filesystem wrapper",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reekoheek/node-fser.git"
+  },
+  "author": "Ganesha <reekoheek@gmail.com> (http://sagara.id)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/reekoheek/node-fser/issues"
+  },
+  "homepage": "https://github.com/reekoheek/node-fser#readme",
+  "dependencies": {
+    "rimraf": "^2.6.2"
+  }
+}
