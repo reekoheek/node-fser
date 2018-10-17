@@ -10,7 +10,7 @@ environment.
 ## How to use
 
 ```js
-const { mkdirp, exists, writeFile, rmrf } = require('fser');
+const { mkdirp, exists, writeFile, readdir, rmrf } = require('fser');
 
 const fs = require('fs');
 // or
@@ -23,6 +23,8 @@ let isDirExists = await exists(fs, '/to/directory');
 
 await writeFile(fs, '/to/directory/some-file.txt', 'blablabla');
 let isFileExists = await exists(fs, '/to/directory/some-file.txt');
+
+let files = await readdir(fs, '/to/directory');
 
 await rmrf(fs, '/to/directory');
 ```
