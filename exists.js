@@ -1,11 +1,13 @@
 module.exports = function exists (fs, p) {
   return new Promise((resolve, reject) => {
-    fs.stat(p, (err, stats) => {
-      if (err) {
-        resolve(false);
-      } else {
-        resolve(true);
-      }
-    });
+    if (fs.access) {
+      fs.access(p, err => {
+        resolve(!Boolean(err));
+      });
+    } else {
+      fs.stat(p, (err, stats) => {
+        resolve(!Boolean(err));
+      });
+    }
   });
 };

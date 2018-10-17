@@ -1,4 +1,5 @@
 const path = require('path');
+const exists = require('./exists');
 
 module.exports = async function mkdirp (fs, p, mode) {
   if (p.charAt(0) !== '/') {
@@ -9,11 +10,7 @@ module.exports = async function mkdirp (fs, p, mode) {
     return;
   }
 
-  let exists = await new Promise(resolve => {
-    fs.exists(p, exists => resolve(exists));
-  });
-
-  if (exists) {
+  if (await exists(fs, p)) {
     return;
   }
 
